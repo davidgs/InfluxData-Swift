@@ -10,6 +10,7 @@
 		EBDF0E9D224BBA4700479810 /* InfluxData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBDF0E93224BBA4700479810 /* InfluxData.framework */; };
 		EBDF0EA2224BBA4700479810 /* InfluxDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDF0EA1224BBA4700479810 /* InfluxDataTests.swift */; };
 		EBDF0EA4224BBA4700479810 /* InfluxData.h in Headers */ = {isa = PBXBuildFile; fileRef = EBDF0E96224BBA4700479810 /* InfluxData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EBDF0EAE224BBA6400479810 /* InfluxData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDF0EAD224BBA6400479810 /* InfluxData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		EBDF0E9C224BBA4700479810 /* InfluxDataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InfluxDataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBDF0EA1224BBA4700479810 /* InfluxDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfluxDataTests.swift; sourceTree = "<group>"; };
 		EBDF0EA3224BBA4700479810 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBDF0EAD224BBA6400479810 /* InfluxData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfluxData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			children = (
 				EBDF0E96224BBA4700479810 /* InfluxData.h */,
 				EBDF0E97224BBA4700479810 /* Info.plist */,
+				EBDF0EAD224BBA6400479810 /* InfluxData.swift */,
 			);
 			path = InfluxData;
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 				TargetAttributes = {
 					EBDF0E92224BBA4700479810 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 					EBDF0E9B224BBA4700479810 = {
 						CreatedOnToolsVersion = 10.1;
@@ -194,6 +198,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBDF0EAE224BBA6400479810 /* InfluxData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,15 +345,19 @@
 		EBDF0EA8224BBA4700479810 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1.1;
 				DEFINES_MODULE = YES;
+				DEPLOYMENT_LOCATION = YES;
 				DEVELOPMENT_TEAM = 54PAT44GP7;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
+				GENERATE_PROFILING_CODE = YES;
 				INFOPLIST_FILE = InfluxData/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -358,7 +367,10 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dragonflyiot.InfluxData;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
+				SKIP_INSTALL = NO;
+				STRIP_INSTALLED_PRODUCT = NO;
+				STRIP_SWIFT_SYMBOLS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
@@ -366,15 +378,23 @@
 		EBDF0EA9224BBA4700479810 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1.1;
 				DEFINES_MODULE = YES;
+				DEPLOYMENT_LOCATION = YES;
 				DEVELOPMENT_TEAM = 54PAT44GP7;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_VERSION = A;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
+				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = "";
+				GENERATE_PROFILING_CODE = YES;
 				INFOPLIST_FILE = InfluxData/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -382,9 +402,17 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MTL_ENABLE_DEBUG_INFO = INLCUDE_SOURCE;
+				"MTL_ENABLE_DEBUG_INFO[arch=*]" = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dragonflyiot.InfluxData;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
+				SKIP_INSTALL = NO;
+				STRIP_INSTALLED_PRODUCT = NO;
+				STRIP_SWIFT_SYMBOLS = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				"SWIFT_ACTIVE_COMPILATION_CONDITIONS[arch=*]" = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
@@ -392,6 +420,7 @@
 		EBDF0EAB224BBA4700479810 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 54PAT44GP7;
@@ -410,6 +439,7 @@
 		EBDF0EAC224BBA4700479810 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 54PAT44GP7;
