@@ -117,9 +117,12 @@ public class InfluxData {
      * Return the fully formed URL as a string including all options.
      */
     public func getConfig() -> String{
-        let myUrl = "\(_proto)://\(_server):\(_port)\(_urlString)\(_org)&bucket=\(_bucket)&precision=\(_precision)"
-        print(myUrl)
-        return myUrl
+        if(_port > 0){
+            return "\(_proto)://\(_server):\(_port)\(_urlString)\(_org)&bucket=\(_bucket)&precision=\(_precision)"
+        }
+        else {
+            return "\(_proto)://\(_server)\(_urlString)\(_org)&bucket=\(_bucket)&precision=\(_precision)"
+        }
     }
     
     /**
