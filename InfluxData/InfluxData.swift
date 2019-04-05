@@ -99,7 +99,7 @@ public class InfluxData {
      * @param proto Set the protocol to either http or https. Default is http
      **/
     public func setProto(proto: String) -> Bool{
-        if(proto != "http" || proto != "https"){
+        if(proto != "http" && proto != "https"){
             return false
         }
         self._proto = proto
