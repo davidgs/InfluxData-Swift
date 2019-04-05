@@ -9,6 +9,6 @@ let package = Package(
     ],
     targets: [
         .target(name: "InfluxData", path: "InfluxData"),
-        .testTarget(name: "InfluxDataTests", dependencies: ["InfluxDataSwift"], path: "InfluxDataTests")
+        .testTarget(name: "InfluxDataTests", dependencies: ["InfluxData"], path: "InfluxDataTests")
     ]
 )
