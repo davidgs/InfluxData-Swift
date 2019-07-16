@@ -3,8 +3,12 @@
 //  Copyright © 2019 David G. Simmons. All rights reserved.
 //
 
+#if os(macOS)
 import Cocoa
-
+#elseif os(Linux)
+import Foundation
+public typealias uint16 = UInt16
+#endif
 
 /*
  *
@@ -150,7 +154,7 @@ public class InfluxData {
                 error == nil else {                                              // check for fundamental networking error
                     DispatchQueue.main.async {
                         print("Error: ", error ?? "Unknown error")
-                        self.retMess = "Error: \(error) Unknown error"
+                        self.retMess = "Error: \(String(describing: error)) Unknown error"
                     }
                     return
             }
