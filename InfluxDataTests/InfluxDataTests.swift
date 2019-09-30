@@ -10,6 +10,10 @@ import XCTest
 @testable import InfluxData
 
 class InfluxDataTests: XCTestCase {
+    static var allTests = [
+        ("testExample", testExample),
+        ("testPerformanceExample", testPerformanceExample),
+    ]
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
