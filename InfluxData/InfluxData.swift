@@ -6,7 +6,7 @@
 #if os(macOS)
 import Cocoa
 #elseif os(Linux)
-import Foundation
+import FoundationNetworking
 public typealias uint16 = UInt16
 #endif
 
